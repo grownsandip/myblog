@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block body %}
+{% extends "base.html" %} 
+{% block homeactive %}active{% endblock homeactive%}
+{% block body %}
 <div class="container">
   <h1 class="my-3">Welcome to coders blog</h1>
   {% for blog in blogs %}
