@@ -10,7 +10,9 @@ def blog(request):
     return render(request,'bloghome.html',context)
 
 def blogpost(request,slug):
-    return HttpResponse(f"this is the blog{slug}")
+    blog=Blog.objects.filter(slug=slug).first()
+    context={'blog': blog}                                    #grab all blog posts with slug and return the first
+    return render(request,'blogpost.html',context)
 
 def contacts(request):
     return render(request,'contacts.html')
