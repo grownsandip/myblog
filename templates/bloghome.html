@@ -8,7 +8,7 @@
   <div class="my-4">
     <h3 class="text-dark"><a class="text-dark"href="/blogpost/{{blog.slug}}">{{blog.title}}</a></h3>
     <div class="my-2">
-        {{blog.content | slice:245}}...
+        {{blog.short_desc | slice:245}}...
     </div>
 
     <a href="/blogpost/{{blog.slug}}"class="text-dark"><button class="btn btn-primary">Read More...</button></a>
