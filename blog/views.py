@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse
-from blog.models import Blog
+from blog.models import Blog,Contact
 import math
 # Create your views here.
 def home(request):
@@ -36,6 +36,13 @@ def blogpost(request,slug):
     return render(request,'blogpost.html',context)
 
 def contacts(request):
+    if request.method=='POST':
+        name=request.POST.get("name")
+        email=request.POST.get("email")
+        phone=request.POST.get("phone")
+        desc=request.POST.get("desc")
+        instance=Contact(name=name,email=email,phone=phone,desc=desc)
+        instance.save()
     return render(request,'contacts.html')
 
 def search(request):

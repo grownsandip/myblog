@@ -11,3 +11,11 @@ class Blog(models.Model):
 
 def _str_(self):
     return self.title
+
+class Contact(models.Model):
+    sno=models.AutoField(primary_key=True)
+    name=models.CharField(max_length=40)
+    email=models.CharField(max_length=40)
+    phone=models.CharField(max_length=12)
+    desc=models.TextField()
+    time=models.DateTimeField(auto_now_add=True)
